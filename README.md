@@ -1,13 +1,66 @@
 # グラフ描画用ライブラリ
 
+# 環境構築（テスト用）
+
+<details><summary></summary>
+
+cloneする
+```PowerShell
+git clone https://github.com/kenkenkengo0421/my_plt_class.git
+
+```
+
+<br>
+
+venv構築
+```PowerShell
+py -m venv .venv
+```
+
+<br>
+
+venv有効化
+```PowerShell
+.\.venv\Scripts\Activate.ps1
+```
+
+<br>
+
+必要pipinstall
+```PowerShell
+pip install -r requirements.txt
+```
+
+<br>
+
+nb起動
+```PowerShell
+jupyter lab
+```
+
+
+
+
+</details>
+
+
+
+# 使用例、以下の構成の場合
+
 ```
 project
       |_main.ipynb
-      |_my_plot.py
+      |_【my_plot.py】←-------class file
       |_data
            |_train.csv
 ```
 
+<br>
+
+### [main.ipynb](https://github.com/kenkenkengo0421/my_plt_class/blob/main/main.ipynb)
+### [my_plot.py](https://github.com/kenkenkengo0421/my_plt_class/blob/main/my_plot.py)
+
+<br>
 
 ```py
 main.ipynb---
@@ -16,13 +69,13 @@ from my_plots import Hist, sns_Hist
 
 df = pd.read_csv("data/train.csv")
 
-#1
+#1ヒストグラム
 Hist(df, column_name="bmi", step=2)
 
-#2
+#2ヒストグラム ( sns)
 sns_Hist(df, x="bmi", hue="health_condition", step=1)
 
-#3
+#3KDEプロット(滑らかなヒストグラム)
 sns_kde(df, x='calorie_expenditure',hue='health_condition',
         step=200,figsize=(10,5)
        )
