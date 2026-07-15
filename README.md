@@ -65,7 +65,7 @@ project
 ```py
 main.ipynb---
 
-from my_plots import Hist, sns_Hist
+from my_plot import Hist, sns_Hist, sns_kde
 
 df = pd.read_csv("data/train.csv")
 
