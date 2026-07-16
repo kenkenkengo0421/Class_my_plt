@@ -63,22 +63,14 @@ project
 <br>
 
 ```py
-main.ipynb---
 
-from my_plot import Hist, sns_Hist, sns_kde
+ヒストグラム#1 
+ヒストグラム ( sns)#2 
+KDEプロット(滑らかなヒストグラム)#3 
+文字列の値をカウント(棒グラフ)#4
 
-df = pd.read_csv("data/train.csv")
 
-#1ヒストグラム
-Hist(df, column_name="bmi", step=2)
 
-#2ヒストグラム ( sns)
-sns_Hist(df, x="bmi", hue="health_condition", step=1)
-
-#3KDEプロット(滑らかなヒストグラム)
-sns_kde(df, x='calorie_expenditure',hue='health_condition',
-        step=200,figsize=(10,5)
-       )
 ```
 
 
@@ -113,3 +105,14 @@ sns_kde(data=<DF>,
         step=<区切り>)
 ```
 
+# 文字列の値をカウント(棒グラフ)#4
+
+```py
+
+sns_countplot(data=<df>,
+              x=<DFのcolumn>,
+              hue=<基準のcolumn>,
+              figsize=(<横大きさ,縦大きさ>),
+              y_step=<区切り>)
+
+```   
