@@ -64,38 +64,21 @@ project
 
 ```py
 
-ヒストグラム#1 
-ヒストグラム ( sns)#2 
-KDEプロット(滑らかなヒストグラム)#3 
-文字列の値をカウント(棒グラフ)#4
+#ヒストグラム 
+#ヒストグラム( sns)
+#KDEプロット 
+#文字列の値をカウント(棒グラフ)
+#折れ線グラフ
+#折れ線グラフ複数の項目
 
 
+#ヒストグラム
+Hist(data=<DF>, column_name=<DFのcolumn>, bins=<bins>, figsize=(<横大きさ,縦大きさ>), step=<区切り>)
 
-```
+#ヒストグラム ( snsバージョン )
+sns_Hist(data=<DF>, x=<横軸>, hue=<基準のcolumn>, figsize=(<横大きさ,縦大きさ>), step=<区切り>)
 
-
-
-
-# ヒストグラム#1
-```py
-Hist(data=<DF>,
-	 column_name=<DFのcolumn>,
-	 bins=<bins>,
-	 figsize=(<横大きさ,縦大きさ>),
-	 step=<区切り>)
-```
-
-# ヒストグラム ( sns)#2
-```py
-sns_Hist(data=<DF>,
-		 x=<横軸>,
-		 hue=<基準のcolumn>,
-		 figsize=(<横大きさ,縦大きさ>),
-		 step=<区切り>)
-```
-
-# KDEプロット(滑らかなヒストグラム)#3
-```py
+#KDEプロット(滑らかなヒストグラム)
 sns_kde(data=<DF>,
         x=<横軸>,
         hue=<基準のcolumn>,
@@ -103,16 +86,32 @@ sns_kde(data=<DF>,
         common_norm=<False>,　　　　　　 #よくわからん 
         figsize=(<横大きさ,縦大きさ>),
         step=<区切り>)
-```
 
-# 文字列の値をカウント(棒グラフ)#4
-
-```py
-
+#文字列の値をカウント(棒グラフ)
 sns_countplot(data=<df>,
               x=<DFのcolumn>,
               hue=<基準のcolumn>,
               figsize=(<横大きさ,縦大きさ>),
               y_step=<区切り>)
 
-```   
+
+#折れ線グラフ
+sns_line(df, x='step', y='money', step=100)
+
+#折れ線グラフ複数の項目
+cols_to_plot = [
+    'money', 
+    'wheat_price', 
+    'melon_price', 
+    'wheat_in_shed', 
+    'melon_in_shed'
+]
+
+sns_line_s(df, x='step', y=cols_to_plot, step=30)
+
+```
+
+
+
+
+
