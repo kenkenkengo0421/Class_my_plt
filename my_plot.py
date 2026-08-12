@@ -6,7 +6,6 @@ import seaborn as sns
 import math
 
 
-
 class Hist:
     """
     ヒストグラム（全体を見るとき）
